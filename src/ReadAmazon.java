@@ -61,7 +61,12 @@ public class ReadAmazon {
 //        		previous1 = values[1];
 	        	
 	        	
-	        	if(values[0]>=0&&values[0]<=numOfNodes&&values[1]>=0&&values[1]<=numOfNodes){
+	        	if(
+                        values[0]>=0
+                        && values[0]<=numOfNodes
+                        && values[1]>=0
+                        && values[1]<=numOfNodes)
+                {
 	        		Neighbor neighbor = new Neighbor();
 	        		neighbor.setNodeId(values[1]);
 	        		boolean isNewPair = true;

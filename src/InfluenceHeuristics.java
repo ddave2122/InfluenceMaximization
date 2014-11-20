@@ -6,9 +6,7 @@ public class InfluenceHeuristics {
 	 ArrayList<Node> nodeList;
 	 int k;
 	 int[] seeds;
-	 
-	
-	 
+
 	 //initialize
 	 public InfluenceHeuristics(int sizeOfSeedSet) {
 		super();
@@ -174,7 +172,6 @@ public class InfluenceHeuristics {
 			 SpreadTrial(seeds[i]);
 		 }
 		 SpreadTrial(nodeID);
-
 		 
 		 //Statistics
 		 int activeNum = 0;
@@ -186,7 +183,6 @@ public class InfluenceHeuristics {
 				 inactiveNum++;
 			 }
 		 }
-		 
 		 return activeNum;
 	 }
 	 
@@ -259,8 +255,4 @@ public class InfluenceHeuristics {
 		 System.out.println("Influence Spread: " + spread);
 		
 	}
-	 
-	 
-	 
-	 
 }

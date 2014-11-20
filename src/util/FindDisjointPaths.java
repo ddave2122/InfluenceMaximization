@@ -2,7 +2,6 @@ package util;
 
 
 import java.util.ArrayList;
-import java.util.Map;
 
 
 public class FindDisjointPaths {
@@ -12,7 +11,8 @@ public class FindDisjointPaths {
 	
 	ArrayList<Double> disjointPathsProb = new ArrayList<Double>();
 	
-	//every time the path cannot go further since next node is visited by the optimal one, all the optimal path is removed, the path should do again
+	//every time the path cannot go further since next node is visited by the optimal one,
+	// all the optimal path is removed, the path should do again
 	ArrayList<ArrayList<Integer>> sleepPaths = new ArrayList<ArrayList<Integer>>();
 		
 	ArrayList<Double> sleepPathsProb = new ArrayList<Double>();
@@ -49,18 +49,14 @@ public class FindDisjointPaths {
 		sleepPaths.clear();
 		sleepPathsProb.clear();
 	} 
-	
-	
-	
-	
-	
+
 	
 	/**
 	 * @return currentPath first called use -1
 	 * find k disjoint shortest paths
 	 * @throws InterruptedException 
 	 */
-	public  void findpaths(int source, int dest, int parentPath, int TTL, int k) {
+	public  void findPaths(int source, int dest, int parentPath, int TTL, int k) {
 		
 		//System.out.println("paths size: " + paths.size() + " disjoint paths size: " + disjointPaths.size());
 		//there is already one path to the destination
@@ -319,7 +315,7 @@ public class FindDisjointPaths {
 			//System.out.println(paths.size());
 			int maximumPath = findMaximumPath();
 			//try{
-				findpaths(paths.get(maximumPath).get(paths.get(maximumPath).size()-1), dest, maximumPath, TTL, k);
+				findPaths(paths.get(maximumPath).get(paths.get(maximumPath).size() - 1), dest, maximumPath, TTL, k);
 //			//}catch (java.lang.StackOverflowError e) {
 //				//System.out.println(e.toString());
 //				System.out.println("paths size: " + paths.size());
@@ -338,7 +334,7 @@ public class FindDisjointPaths {
 	 * @return currentPath first called use -1
 	 */
 	/*
-	public  void findpaths(int source, int dest, int parentPath, int TTL){
+	public  void findPaths(int source, int dest, int parentPath, int TTL){
 		
 		//there is already one path to the destination
 		//delete all the paths with same edge with the successful path
@@ -490,7 +486,7 @@ public class FindDisjointPaths {
 		
 		while(paths.size()!=0){
 			int maximumPath = findMaximumPath();
-			findpaths(paths.get(maximumPath).get(paths.get(maximumPath).size()-1), dest, maximumPath, TTL);
+			findPaths(paths.get(maximumPath).get(paths.get(maximumPath).size()-1), dest, maximumPath, TTL);
 		}
 		return;
 	}
@@ -618,7 +614,7 @@ public class FindDisjointPaths {
 		FindDisjointPaths findpaths = new FindDisjointPaths(test, 5);
 		System.out.println(test.get(0).getNeighborList().size());
 
-		findpaths.findpaths(0, 4, -1, 3, 5);
+		findpaths.findPaths(0, 4, -1, 3, 5);
 		
 		
 		ArrayList<ArrayList<Integer>> paths = findpaths.getDisjointPaths();

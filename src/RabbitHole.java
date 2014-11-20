@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
+
 import util.*;
 
 public class RabbitHole {
@@ -13,8 +13,7 @@ public class RabbitHole {
 	 ArrayList<Community> communityList = new ArrayList<Community>();
 	 int threshold = 200; // limit the number of communities
 	 int numOfCommunities = 0;
-	
-	 
+
 	 //initialize
 	 public RabbitHole(int sizeOfSeedSet) {
 		super();
@@ -48,7 +47,6 @@ public class RabbitHole {
 		for(int i=0; i<k; i++){
 			seeds[i] = 0;
 		}
-		
 	}
 	 
 	 public void run(){
@@ -84,7 +82,6 @@ public class RabbitHole {
 			 if(numOfSeeds==k)
 				 break;
 		 }
-		 
 	 }
 	 
 	 
@@ -145,9 +142,6 @@ public class RabbitHole {
 					 }
 //					 System.out.println( n.getNodeID() + " : " + maxLabel + " " + labelFrequency);
 				 }
-				 
-				 
-				 
 			 }
 		 }
 		 //see how many communities we have
@@ -184,14 +178,9 @@ public class RabbitHole {
 				 }
 			 }
 		 }
-		 
-		 
 		 System.out.println("Community size>" + threshold + " number: " + numOfCommunities);
-		 
-		 
 	 }
-	 
-	 
+
 	 public void EdgeAnalysis(){
 		 //detect edges for communities.
 		 for(Community c: communityList){
@@ -252,7 +241,7 @@ public class RabbitHole {
 		 for(int i=0; i<numOfCommunities; i++){
 			 for(int j=i+1; j<numOfCommunities; j++){
 				 FindDisjointPaths findpaths = new FindDisjointPaths(nodeList, nodeList.size());
-				 findpaths.findpaths(communityList.get(i).getPinList().get(0).getNodeID(), communityList.get(j).getPinList().get(0).getNodeID(), -1, 5, 1);
+				 findpaths.findPaths(communityList.get(i).getPinList().get(0).getNodeID(), communityList.get(j).getPinList().get(0).getNodeID(), -1, 5, 1);
 				 ArrayList<ArrayList<Integer>> paths = findpaths.getDisjointPaths();
 				 System.out.println("Communities: " + i + " " + j);
 				 for(ArrayList<Integer> a: paths){
@@ -264,8 +253,6 @@ public class RabbitHole {
 				 }
 			 }
 		 }
-		 
-		 
 	 }
 	 
 	 public int InfluenceSpread(){
@@ -314,10 +301,6 @@ public class RabbitHole {
 		 System.out.println("Influence Spread: " + spread);
 		
 	}
-	 
-	 
-	 
-	 
 }
 
 
