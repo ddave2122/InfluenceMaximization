@@ -62,10 +62,10 @@ public class ReadAmazon {
 	        	
 	        	
 	        	if(
-                        values[0]>=0
-                        && values[0]<=numOfNodes
-                        && values[1]>=0
-                        && values[1]<=numOfNodes)
+                        values[0] >= 0
+                        && values[0] <= numOfNodes
+                        && values[1] >= 0
+                        && values[1] <= numOfNodes)
                 {
 	        		Neighbor neighbor = new Neighbor();
 	        		neighbor.setNodeId(values[1]);
@@ -85,8 +85,7 @@ public class ReadAmazon {
 	        		}
 	        	}
 		    }
-	        
-	        
+
 	        in.close();  
 	    }  
 	    catch(Exception e)  
@@ -153,7 +152,6 @@ public class ReadAmazon {
 	}
 
 
-
 	public static void main(String args[]){
 
 		ReadAmazon readAmazonData = new ReadAmazon();
@@ -167,5 +165,4 @@ public class ReadAmazon {
 			System.out.println();
 		}
 	}
-
 }

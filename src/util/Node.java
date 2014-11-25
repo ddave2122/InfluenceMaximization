@@ -192,9 +192,6 @@ public class Node {
 	public void setLabelID(int labelID) {
 		this.labelID = labelID;
 	}
-	
-	
-	
-	
+
 	
 }

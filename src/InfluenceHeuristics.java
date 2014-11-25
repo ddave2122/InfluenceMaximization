@@ -40,14 +40,13 @@ public class InfluenceHeuristics {
 		for(int i=0; i<k; i++){
 			seeds[i] = 0;
 		}
-		
 	}
 	 
 	 public void run(){
 		 //MaxDegreeSelectSeed();
 //		 RandomSelectSeed();
-//		 DegreeDiscountIC();
-		 //OriginalGreedy();
+		 DegreeDiscountIC();
+		 OriginalGreedy();
 		 InfluenceSpread();
 	 }
 	 
@@ -232,17 +231,20 @@ public class InfluenceHeuristics {
 	 
 	 
 	 public void Spread(int nodeId){
-		 for(Neighbor e: nodeList.get(nodeId).getNeighborList()){
-			 double r = Math.random();
-			 //if the neighbor is not active and r<e then activate it.
-			 if(!nodeList.get(e.getNodeId()).isActive()&&r<=e.getWeight()){
-				 nodeList.get(e.getNodeId()).setActive(true);
-				 Spread(e.getNodeId());
+		 for(Neighbor neighbor: nodeList.get(nodeId).getNeighborList()){
+			 double random = Math.random();
+			 //if the neighbor is not active and random < neighbor then activate it.
+			 if(!nodeList.get(neighbor.getNodeId()).isActive() && random <= neighbor.getWeight())
+             {
+				 nodeList.get(neighbor.getNodeId()).setActive(true);
+				 Spread(neighbor.getNodeId());
 			 }
 		 }
 	 }
-	 
-	 public static void main(String args[]){
+
+    //IC Model
+	 public static void main(String args[])
+     {
 
 		 int spread = 0;
 		 int reps = 10;
@@ -253,6 +255,5 @@ public class InfluenceHeuristics {
 		 } 
 		 spread = spread/reps;
 		 System.out.println("Influence Spread: " + spread);
-		
 	}
 }

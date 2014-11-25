@@ -1,11 +1,5 @@
 package util;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NavigableMap;
-
-
 public class Edge {
 
 	int EdgeID;
